@@ -61,7 +61,7 @@ mongoose.set("strictQuery", false);
 
 
 //database connections
-const url = process.env.DB;;
+const url = "mongodb+srv://singhdalpat8182:ravindra@cluster0.toc0ow4.mongodb.net/?retryWrites=true&w=majority";
 mongoose
     .connect(url, {
         useNewUrlParser: true,

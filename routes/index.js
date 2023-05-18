@@ -70,7 +70,7 @@ mongoose
     .then(() => {
         console.log("connection successfull to database");
     })
-    .catch((err) =>  res.status(400).send("error occured"));
+    .catch((err) =>  console.log(err));
 
 //session setup
 route.use(

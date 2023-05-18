@@ -1,0 +1,958 @@
+/* ================= LOADER ================== */
+
+.PosterDes-loader-inner {
+    background: #121212;
+}
+
+.PosterDes-loader {
+    border: 5px solid rgba(255, 255, 255, 0.1);
+    border-top-color: #6658ea;
+}
+
+/* ================= GENERAL STYLES ================== */
+
+* {
+    scrollbar-color: #717171 #303030;
+}
+
+*::-webkit-scrollbar-track {
+    background: #303030;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #999;
+    border: 4px solid #303030;
+}
+
+body {
+    background: #212121;
+    color: #aaa;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #fff;
+}
+
+.text-danger {
+    color: #F44336 !important;
+}
+
+.text-success {
+    color: #009688 !important;
+}
+
+.text-warning {
+    color: #FFC107 !important;
+}
+
+.text-white {
+    color: #ffffff !important;
+}
+
+#PosterDes-icon-panel hr {
+    border-bottom: 1px dashed #303030;
+}
+
+.notice {
+    color: #aaa;
+    background: rgba(255, 255, 255, 0.1);
+    border-left: 4px solid #6658ea;
+}
+
+.notice.notice-danger {
+    border-left: 4px solid #F44336;
+}
+
+.notice.notice-warning {
+    border-left: 4px solid #FFC107;
+}
+
+.notice.notice-success {
+    border-left: 4px solid #009688;
+}
+
+.PosterDes-img-loader {
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-top-color: #6658ea;
+}
+
+
+/* ================= PAGE STRUCTURE ================== */
+
+#PosterDes-toggle-left,
+#PosterDes-toggle-right {
+    background-color: #121212;
+    border: 1px solid #303030;
+}
+
+#PosterDes-toggle-right.closed,
+#PosterDes-toggle-left.closed {
+    background-color: #090909;
+}
+
+#PosterDes-toggle-left .material-icons,
+#PosterDes-toggle-right .material-icons {
+    color: #fff;
+}
+
+#PosterDes-toggle-left:hover .material-icons,
+#PosterDes-toggle-right:hover .material-icons {
+    color: #6658ea;
+}
+
+/* ================= TOP BAR ================== */
+
+#PosterDes-top-bar {
+    background: #090909;
+    border-bottom: 1px solid #303030;
+}
+
+.PosterDes-top-bar-menu .PosterDes-btn-simple {
+    color:#fff;
+}
+  
+.PosterDes-top-bar-menu .PosterDes-btn-simple:disabled {
+    color:#aaa
+}
+
+/* ================= DROPDOWN ================== */
+
+ul.PosterDes-dropdown {
+    background: #090909;
+    border: 1px solid #303030;
+}
+
+ul.PosterDes-dropdown li {
+    border-bottom: 1px solid #303030;
+}
+
+ul.PosterDes-dropdown li a {
+    color: #aaa;
+}
+
+ul.PosterDes-dropdown li a:hover {
+    color: #fff;
+}
+
+ul.PosterDes-dropdown li a .material-icons {
+    color: #6658ea;
+}
+
+/* ================= CONTENT BAR ================== */
+
+.PosterDes-content-bar {
+    background: #121212;
+    border: 1px solid #303030;
+}
+
+.PosterDes-content-bar .PosterDes-img-size {
+    border-right: 1px solid #303030;
+}
+
+.PosterDes-content-bar .PosterDes-counter .PosterDes-btn,
+.PosterDes-content-bar .PosterDes-counter .PosterDes-btn:hover,
+.PosterDes-content-bar .PosterDes-counter .PosterDes-btn:focus {
+    background: #121212;
+    color: #aaa;
+}
+
+.PosterDes-content-bar .PosterDes-counter .PosterDes-btn:hover {
+    color: #fff;
+}
+
+.PosterDes-counter .PosterDes-btn:disabled {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.PosterDes-content-bar .PosterDes-counter:after {
+    background: #303030;
+}
+
+#PosterDes-img-drag {
+    border-right: 1px solid #303030;
+    background: #121212;
+    color: #aaa;
+}
+
+#PosterDes-img-drag:hover,
+#PosterDes-img-drag.active {
+    background: #303030;
+    color: #fff;
+}
+
+/* ================= ICON MENU ================== */
+
+#PosterDes-icon-menu {
+    background: #090909;
+}
+
+#PosterDes-icon-menu.closed {
+    border-right: 1px solid #303030;
+}
+
+button.PosterDes-icon-menu-btn {
+    color: #aaa;
+    background: #090909;
+}
+
+button.PosterDes-icon-menu-btn.active,
+button.PosterDes-icon-menu-btn:hover {
+    color: #fff;
+    background: #121212;
+}
+
+#PosterDes-icon-panel {
+    border-right: 1px solid #303030;
+    background: #121212;
+}
+
+/* ================= CONTENT ================== */
+
+#PosterDes-content {
+    background-color: #212121;
+}
+
+#PosterDes-canvas-wrap {
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2' height='2'%3E%3Cpath d='M1,0H0V1H2V2H1' fill='%23000000'/%3E%3C/svg%3E") left top/contain #333;
+    background-size: 15px 15px;
+}
+
+#PosterDes-canvas-loader {
+    background: #121212;
+}
+
+/* ================= LAYERS ================== */
+
+#PosterDes-right-col {
+    border-left: 1px solid #303030;
+    background: #121212;
+}
+
+.PosterDes-layers-title {
+    background: #090909;
+}
+
+#PosterDes-layers li {
+    color: #aaa;
+    border-bottom: 1px solid #303030;
+    background: #121212;
+}
+
+#PosterDes-layers li:first-child {
+    border-top: 1px solid #303030;
+}
+
+#PosterDes-layers li:hover {
+    color: #fff;
+}
+
+#PosterDes-layers li.active {
+    color: #fff;
+    background: #212121;
+}
+
+#PosterDes-layers li .layer-icons {
+    background: #090909;
+}
+
+#PosterDes-layers li .layer-name {
+    color:#aaa;
+}
+
+#PosterDes-layers li .layer-name:focus {
+    color:#fff;
+}
+
+#PosterDes-layers li .layer-icons .material-icons {
+    color: #aaa;
+}
+
+#PosterDes-layers>li>.material-icons {
+    color: #6658ea;
+}
+
+#PosterDes-layers>li>.material-icons.layer-settings {
+    background: #090909;
+    color: #aaa;
+}
+
+#PosterDes-layers>li>.material-icons.layer-settings:hover,
+#PosterDes-layers>li>.material-icons.layer-settings.active {
+    color: #fff;
+}
+
+#PosterDes-layers li .layer-icons .layer-visible,
+#PosterDes-layers li .layer-icons .layer-unlocked {
+    color: #009688;
+}
+
+#PosterDes-layers li .layer-icons .layer-hidden,
+#PosterDes-layers li .layer-icons .layer-locked {
+    color: #FFC107;
+}
+
+#PosterDes-no-layer a {
+    color: #6658ea;
+}
+
+#PosterDes-layer-delete-wrap {
+    border-top: 1px dashed #303030;
+}
+
+/* ================= GRID ================== */
+
+.PosterDes-frames-grid .grid-item,
+.PosterDes-grid .grid-item {
+    background: #303030;
+}
+
+.PosterDes-frame,
+.PosterDes-element {
+    border: 1px solid #303030;
+    background: #303030;
+}
+
+.type-customSVG>a:before {
+    color: #4CAF50;
+}
+
+.PosterDes-element.light {
+    background: #eee;
+}
+
+.PosterDes-frame:hover,
+.PosterDes-element:hover {
+    border: 1px solid #fff;
+}
+
+.template-favorite,
+.PosterDes-frame .frame-favorite,
+.PosterDes-element .element-favorite {
+    background: #fff;
+}
+
+.PosterDes-frames-grid .PosterDes-frame {
+    border: 3px solid #303030;
+}
+
+.PosterDes-frames-grid .PosterDes-frame:hover {
+    border: 3px solid #fff;
+}
+
+.grid-icon-item {
+    color: #aaa;
+    border: 1px solid #121212;
+}
+
+.grid-icon-item:hover {
+    border: 1px solid #6658ea;
+    color: #fff;
+}
+
+.grid-icon-item .material-icons {
+    color: #6658ea;
+}
+
+.grid-icon-label {
+    border-top: 1px solid #121212;
+}
+
+/* ================= ELEMENTS ================== */
+
+#PosterDes-filters.PosterDes-grid img:hover {
+    border: 3px solid #fff;
+}
+
+#PosterDes-filters.PosterDes-grid div label span {
+    background: #303030;
+    color: #fff;
+}
+
+#PosterDes-filters.PosterDes-grid input[type=checkbox]:checked+label img,
+#PosterDes-filters.PosterDes-grid input[type=radio]:checked+label img {
+    border: 3px solid #fff
+}
+
+#PosterDes-filters.PosterDes-grid input[type=checkbox]:checked+label>span,
+#PosterDes-filters.PosterDes-grid input[type=radio]:checked+label>span {
+    color: #090909;
+    background: #fff;
+}
+
+.PosterDes-element>.material-icons {
+    color: #fff;
+}
+
+/* ================= BUTTONS ================== */
+
+.PosterDes-btn-simple {
+    color: #aaa;
+}
+
+.PosterDes-btn-simple:hover,
+.PosterDes-btn-simple.active {
+    color: #fff;
+}
+
+.PosterDes-btn-simple:disabled {
+    color: #aaa;
+}
+
+.PosterDes-btn-simple.star {
+    color: #FF9800 !important;
+}
+
+.PosterDes-btn {
+    background: #212121;
+    color: #fff;
+}
+
+.PosterDes-btn:hover,
+.PosterDes-btn.primary:hover {
+    background: #5546e8;
+}
+
+.PosterDes-btn.active,
+.PosterDes-btn.active:hover,
+.PosterDes-btn.primary {
+    background: #6658ea;
+    color: #fff;
+}
+
+.PosterDes-btn.danger {
+    background: #F44336;
+}
+
+.PosterDes-btn.danger:hover {
+    background: #D32F2F;
+}
+
+.PosterDes-horizontal-center.active,
+.PosterDes-vertical-center.active {
+    background: #212121 !important;
+}
+
+/* ================= BLOCKS ================== */
+
+.icon-group {
+    border: 1px solid #303030;
+    background: #303030
+}
+
+.icon-group .PosterDes-btn {
+    border-right: 1px solid #303030;
+}
+
+.icon-group .PosterDes-btn:hover,
+.icon-group .PosterDes-btn.active {
+    background: #090909;
+}
+
+/* ================= TOOLTIP ================== */
+
+.tooltip:after {
+    background-color: #fff;
+    color: #090909;
+}
+
+.tooltip:before {
+    border-color: #fff transparent;
+}
+
+/* ================= PAGINATION ================== */
+
+.PosterDes-pagination ul li {
+    border: 1px solid #303030;
+    color: #aaa;
+}
+
+.PosterDes-pagination ul li.active,
+.PosterDes-pagination ul li.active:hover {
+    background: #6658ea;
+    border-color: #6658ea;
+    color: #fff;
+}
+
+.PosterDes-pagination ul li:hover {
+    border-color: #6658ea;
+}
+
+.PosterDes-pagination ul li a {
+    color: #fff;
+}
+
+.PosterDes-accordion .PosterDes-pagination ul li {
+    color: #aaa;
+    background: #212121;
+}
+
+.PosterDes-accordion .PosterDes-pagination ul li.active,
+.PosterDes-accordion .PosterDes-pagination ul li.active:hover {
+    color: #fff;
+    background: #6658ea;
+}
+
+.PosterDes-accordion .PosterDes-pagination ul li a,
+.PosterDes-accordion .PosterDes-pagination ul li>span {
+    color: #aaa;
+}
+
+.PosterDes-accordion .PosterDes-pagination ul li.active>span,
+.PosterDes-accordion .PosterDes-pagination ul li a:hover {
+    color: #fff
+}
+
+/* ================= ACCORDION ================== */
+
+ul.PosterDes-accordion>li {
+    border: 1px solid #303030;
+}
+
+ul.PosterDes-accordion>li.opened {
+    border-color: #6658ea;
+}
+
+ul.PosterDes-accordion>li>a {
+    color: #aaa;
+}
+
+ul.PosterDes-accordion>li>a:hover,
+ul.PosterDes-accordion>li.opened>a {
+    color: #fff;
+}
+
+ul.PosterDes-accordion>li.opened>a {
+    border-bottom: 1px solid #303030
+}
+
+ul.PosterDes-accordion>li>a>.data-count {
+    background: #6658ea;
+    color: #fff;
+}
+
+/* ================= RANGESLIDER ================== */
+
+.PosterDes-slider {
+    background: #303030;
+}
+
+.PosterDes-slider::-webkit-slider-thumb {
+    background: #6658ea;
+    border: 3px solid #121212;
+}
+
+.PosterDes-slider::-moz-range-thumb {
+    background: #6658ea;
+    border: 3px solid #121212;
+}
+
+/* ================= COUNTER ================== */
+
+.PosterDes-counter .PosterDes-btn,
+.PosterDes-counter .PosterDes-btn:hover,
+.PosterDes-counter .PosterDes-btn:focus {
+    background: #303030;
+}
+
+.PosterDes-counter .PosterDes-btn:disabled {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* ================= CONTROLS ================== */
+
+.PosterDes-control-label span {
+    background: #303030;
+    color: #fff;
+}
+
+.PosterDes-form-field {
+    background: #212121;
+    border: 1px solid #303030;
+    color: #aaa;
+}
+
+.PosterDes-form-field:focus {
+    background: #212121;
+    border: 1px solid #6658ea;
+    color: #fff;
+}
+
+.PosterDes-search-wrap .material-icons {
+    color: #aaa;
+}
+
+#PosterDes-element-search-icon.cancel,
+#PosterDes-icon-search-icon.cancel {
+    color: #F44336;
+}
+
+.PosterDes-sub-settings {
+    border-top: 1px dashed #303030;
+}
+
+/* ================= COLORPICKER ================== */
+
+.PosterDes-colorpicker,
+.PosterDes-colorpicker:focus,
+.PosterDes-form-field {
+    background: #212121;
+    border: 1px solid #303030;
+    color: #aaa;
+}
+
+.PosterDes-colorpicker:focus {
+    color: #fff;
+}
+
+.sp-container {
+    background: #090909;
+    border: 1px solid #303030;
+}
+
+.sp-palette-container {
+    border-right: solid 1px #303030;
+}
+
+.sp-container button {
+    color: #aaa;
+}
+
+.sp-container button:hover {
+    color: #fff;
+}
+
+.sp-container button.sp-choose {
+    background: #6658ea;
+    color: #fff;
+}
+
+.sp-container button.sp-choose:hover,
+.sp-container button.sp-choose:focus {
+    background: #5546e8;
+    color: #fff;
+}
+
+.sp-clear-display:before {
+    color: #fff;
+}
+
+/* ================= SELECT ================== */
+
+.PosterDes-select {
+    color: #aaa;
+    background: #212121 url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23aaaaaa' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") no-repeat right 0.5rem center;
+    background-size: 20px 10px;
+    border: 1px solid #303030;
+}
+
+.PosterDes-select:focus {
+    border: 1px solid #6658ea;
+}
+
+.PosterDes-select:focus::-ms-value {
+    color: #465362;
+    background-color: #fff;
+}
+
+.select2-container--dark .select2-selection--single {
+    background: #212121;
+    border: 1px solid #303030;
+}
+
+.select2-container--dark .select2-selection--single .select2-selection__rendered {
+    color: #aaa;
+}
+
+.select2-container--dark .select2-selection--single .select2-selection__arrow b {
+    border-color: #aaa transparent transparent transparent;
+}
+
+.select2-container--dark .select2-selection--single .select2-selection__placeholder {
+    color: #fff;
+}
+
+.select2-container--open .select2-dropdown--below,
+.select2-container--open .select2-dropdown--above {
+    background: #090909;
+    border-color: #303030;
+}
+
+.select2-container--dark .select2-results__option--highlighted[aria-selected] {
+    background: #6658ea !important;
+    color: #ffffff;
+}
+
+.select2-container--dark .select2-results__option[aria-selected=true] {
+    background: #6658ea;
+    color: #fff;
+}
+
+.select2-drop {
+    border: 2px solid #303030;
+}
+
+.select2-drop.select2-drop-above {
+    border-top: 2px solid #303030;
+}
+
+.select2-container--dark .select2-search input {
+    border: 1px solid #303030;
+    background: #090909;
+    color: #fff
+}
+
+.select2-container--dark .select2-search input:focus {
+    border: 1px solid #6658ea;
+}
+
+.select2-container--dark .select2-results__group {
+    border-top: 1px solid #303030;
+}
+
+/* ================= TABS ================== */
+
+.PosterDes-tabs-menu li:hover {
+    color: #fff;
+}
+
+.PosterDes-tabs-menu li.active {
+    background: #6658ea;
+    color: #fff;
+}
+
+/* ================= TOGGLE ================== */
+
+.PosterDes-toggle-switch {
+    background: #303030;
+}
+
+.PosterDes-toggle-switch:before {
+    background: #fff;
+}
+
+.PosterDes-toggle-checkbox:checked+.PosterDes-toggle-switch {
+    background: #6658ea;
+}
+
+/* ================= CHECKBOX ================== */
+
+.PosterDes-checkmark {
+    background-color: #212121;
+    border: 1px solid #303030;
+}
+
+.PosterDes-checkbox input:checked~.PosterDes-checkmark {
+    background-color: #6658ea;
+    border-color: #6658ea;
+}
+
+.PosterDes-checkbox .PosterDes-checkmark:after {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+}
+
+/* ================= CUSTOM CURSOR ================== */
+
+.tm-pointer-simple.tm-cursor {
+    background-color: #fff;
+}
+
+/* ================= MODAL ================== */
+
+.PosterDes-modal {
+    background: rgba(51, 51, 51, 0.9);
+}
+
+.PosterDes-modal-inner>.PosterDes-tabs>.PosterDes-tabs-menu>li {
+    background: #212121;
+}
+
+.PosterDes-modal-inner>.PosterDes-tabs>.PosterDes-tabs-menu>li.active {
+    background: #121212;
+}
+
+.PosterDes-modal-inner>.PosterDes-tabs>.PosterDes-tab,
+.PosterDes-modal-bg {
+    background: #121212;
+}
+
+.PosterDes-modal-close {
+    color: #fff;
+    background: #F44336;
+}
+
+.PosterDes-modal-close:hover {
+    color: #fff;
+    background: #D32F2F;
+}
+
+.PosterDes-modal-close .material-icons {
+    font-size: 20px;
+    line-height: 36px;
+}
+
+#PosterDes-download-as-json,
+#PosterDes-save-as-json {
+    border-top: 1px dashed #303030;
+}
+
+.PosterDes-select-btn-block>div:first-child {
+    border-right: 1px dashed #303030
+}
+
+/* ================= TEMPLATE LIBRARY ================== */
+
+.PosterDes-template-list {
+    border: 1px solid #303030;
+}
+
+.PosterDes-template-list li {
+    border-bottom: 1px solid #303030;
+}
+
+.PosterDes-template-list li.active {
+    background:#212121
+}
+
+#PosterDes-history-list li .info .material-icons {
+    color: #6658ea;
+}
+
+#PosterDes-history-list li .info span.time {
+    background: #303030;
+    color:#fff;
+}
+
+/* ================= MASONRY ================== */
+
+.PosterDes-masonry-item .favorite {
+    background: #fff;
+}
+
+.PosterDes-masonry-item-inner {
+    border: 4px solid #303030;
+}
+
+.grid-item:hover .PosterDes-masonry-item-inner,
+.PosterDes-masonry-item-inner:hover {
+    border-color: #fff;
+}
+
+.PosterDes-masonry-item-desc {
+    background: #fff;
+    color: #090909
+}
+
+.PosterDes-svg-library-delete,
+.PosterDes-library-delete {
+    color: #fff;
+    background: #F44336;
+}
+
+.PosterDes-svg-library-delete:hover,
+.PosterDes-library-delete:hover {
+    background: #D32F2F;
+}
+
+a.pexels-url {
+    color: #6658ea;
+    background: #fff;
+}
+
+a.pexels-url:hover {
+    color: #544abf;
+}
+
+#pexels-credit {
+    color:#aaa;
+}
+
+/* ================= RULER ================== */
+
+.guide.v {
+    border-right: 1px solid #6658ea;
+}
+
+.guide.h {
+    border-bottom: 1px solid #6658ea;
+}
+
+.guide .info {
+    background-color: #090909;
+    border: 1px solid #212121;
+    color: #fff;
+}
+
+.ruler {
+    background-color:#212121;
+}
+
+.ruler .label {
+    color: #aaa;
+}
+
+.ruler.h {
+    border-bottom: 1px solid #444;
+}
+
+.ruler.h span.major {
+    border-left: 1px solid #444
+}
+
+.ruler.h span.milestone {
+    border-left: 1px solid #444
+}
+
+.ruler.v {
+    border-right: 1px solid #444
+}
+
+.ruler.v span.major {
+    border-top: 1px solid #444;
+}
+
+.ruler.v span.milestone {
+    border-top: 1px solid #444;
+}
+
+#PosterDes-ruler-icon {
+    background: #212121;
+    border-right:1px solid #444;
+    border-bottom:1px solid #444;
+}
+
+.menu-btn {
+    background-color: #6658ea;
+    color: #fff;
+}
+
+.rg-menu {
+  border-right: 1px solid #303030;
+}
+
+.rg-menu li {
+    border-bottom: 1px solid #303030;
+}
+
+.rg-menu a {
+    background-color: #090909;
+    color: #aaa;
+}
+
+.rg-menu a:hover,
+.rg-menu a.selected {
+    color: #fff;
+}
+
+/* ================= MEDIA QUERIES ================== */
+
+@media only screen and (max-width: 800px) {
+    .PosterDes-modal-inner>.PosterDes-tabs>.PosterDes-tabs-menu>li {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+}

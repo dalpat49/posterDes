@@ -1,0 +1,2624 @@
+/* ---------------------- 
+Stylesheet Guide
+-------------------------
+
+MATERIAL ICONS
+LOADER
+GENERAL STYLES
+PAGE STRUCTURE
+TOP BAR
+DROPDOWN
+CONTENT BAR
+ICON MENU
+CONTENT
+LAYERS
+GRID
+ELEMENTS
+BUTTONS
+BLOCKS
+TOOLTIP
+PAGINATION
+ACCORDION
+RANGESLIDER
+COUNTER
+CONTROLS
+COLORPICKER
+SELECT
+TABS
+TOGGLE
+CHECKBOX
+CUSTOM CURSOR
+MODAL
+TEMPLATE LIBRARY
+MEDIA LIBRARY
+SVG LIBRARY
+MASONRY
+FRONT-END EDITOR
+MEDIA QUERIES
+
+*/
+
+/* ================= LOADER ================== */
+
+.PosterDes-loader-inner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999999999;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.PosterDes-loader-wrap.hide {
+    display: none !important;
+}
+
+.PosterDes-loader {
+    box-sizing: border-box;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    -webkit-animation: PosterDesSpin 1s infinite linear;
+    animation: PosterDesSpin 1s infinite linear
+}
+
+@-webkit-keyframes PosterDesSpin {
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes PosterDesSpin {
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+/* ================= GENERAL STYLES ================== */
+
+*,
+*::after,
+*::before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+* {
+    scrollbar-width: thin;
+}
+
+*::-webkit-scrollbar {
+    width: 14px;
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Roboto Condensed', sans-serif;
+    margin: 0 0 15px 0;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 2rem
+}
+
+h2 {
+    font-size: 1.85rem
+}
+
+h3 {
+    font-size: 1.7rem
+}
+
+h4 {
+    font-size: 1.55rem
+}
+
+h5 {
+    font-size: 1.4rem
+}
+
+h6 {
+    font-size: 1.25rem
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0 0 15px 0;
+}
+
+select:disabled,
+input:disabled,
+button:disabled {
+    pointer-events: none !important;
+}
+
+.input-hidden {
+    position: absolute;
+    left: -9999px;
+}
+
+#PosterDes-icon-panel hr {
+    display: block;
+    border: none;
+    margin: 25px 0;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.d-block {
+    display: block !important;
+}
+
+#PosterDes-custom-element-options,
+#PosterDes-noframes,
+#PosterDes-noelements,
+#PosterDes-noicons,
+#PosterDes-text-settings,
+#PosterDes-image-settings,
+#PosterDes-shape-settings,
+#shape-gradient-settings,
+#text-gradient-settings,
+#element-gradient-settings,
+#PosterDes-custom-shape,
+#PosterDes-brush-pattern-width,
+#PosterDes-brush-pattern-distance,
+#shape-custom-width-wrap {
+    display: none;
+}
+
+#PosterDes-noicons {
+    margin-top: 0;
+}
+
+#PosterDes-custom-shape {
+    margin-top: 20px;
+}
+
+.notice {
+    display: block;
+    padding: 12px 15px;
+    border-radius: 4px;
+    font-weight: 700;
+    margin: 15px 0;
+}
+
+.notice h6 {
+    margin-bottom: 0.5rem;
+}
+
+.PosterDes-img-wrap {
+    position: relative;
+    min-height: 120px;
+    width: 100%;
+}
+
+.PosterDes-frame .PosterDes-img-wrap {
+    min-height: 60px;
+}
+
+.PosterDes-img-loader {
+    box-sizing: border-box;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    -webkit-animation: PosterDesSpin 1s infinite linear;
+    animation: PosterDesSpin 1s infinite linear;
+    z-index: 1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    content: '';
+    margin: -15px 0 0 -15px;
+}
+
+
+/* ================= PAGE STRUCTURE ================== */
+
+#PosterDes-body {
+    position: relative;
+    height: 100vh;
+    margin: 0;
+    padding: 60px 200px 0 415px;
+}
+
+body.panel-closed #PosterDes-body {
+    padding-left: 75px;
+}
+
+body.layers-closed #PosterDes-body {
+    padding-right: 0;
+}
+
+.PosterDes-wrap {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.PosterDes-inner-wrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+#PosterDes-toggle-left,
+#PosterDes-toggle-right {
+    position: fixed;
+    height: 60px;
+    top: 50%;
+    transform: translateY(-30px);
+    z-index: 10;
+    width: 22px;
+    cursor: pointer;
+    text-align: center;
+}
+
+#PosterDes-toggle-left {
+    left: 414px;
+    border-left: none !important;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#PosterDes-toggle-right {
+    right: 199px;
+    border-right: none !important;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    z-index: 8;
+}
+
+#PosterDes-toggle-left.closed {
+    display: none !important;
+}
+
+#PosterDes-toggle-right.closed {
+    right: 0;
+}
+
+#PosterDes-toggle-left .material-icons,
+#PosterDes-toggle-right .material-icons {
+    font-size: 22px;
+    line-height: 60px;
+    text-align: center;
+    transition: color 0.2s ease-in-out;
+}
+
+/* ================= TOP BAR ================== */
+
+#PosterDes-top-bar {
+    display: flex;
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 0;
+    align-items: center;
+    z-index: 99;
+}
+
+.PosterDes-top-bar-menu {
+    margin-left: auto;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+}
+
+.PosterDes-top-bar-menu>div {
+    margin-left: 10px;
+}
+
+.PosterDes-logo {
+    padding: 15px;
+    height: 60px;
+}
+
+.PosterDes-logo img {
+    height: 100%;
+    width: auto;
+}
+
+.PosterDes-logo img.logo-desktop {
+    display: block;
+}
+
+.PosterDes-logo img.logo-mobile {
+    display: none;
+}
+
+/* ================= DROPDOWN ================== */
+
+#PosterDes-user-menu {
+    display: flex;
+    align-items: center;
+}
+
+#PosterDes-user-menu img {
+    width: 32px;
+    height: auto;
+    vertical-align: bottom;
+    border-radius: 100%;
+}
+
+.PosterDes-dropdown-wrap {
+    position: relative;
+    cursor: pointer;
+}
+
+ul.PosterDes-dropdown {
+    position: absolute;
+    top: 42px;
+    right: 0;
+    width: 200px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    z-index: 9;
+    border-radius: 4px;
+    display: none;
+}
+
+ul.PosterDes-dropdown li {
+    padding: 10px;
+}
+
+ul.PosterDes-dropdown li:last-child {
+    border: none !important;
+}
+
+ul.PosterDes-dropdown li a {
+    display: block;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s ease-in-out;
+}
+
+ul.PosterDes-dropdown li a .material-icons {
+    font-size: 15px;
+    width: 22px;
+}
+
+.PosterDes-dropdown-wrap>.material-icons {
+    transition: transform 0.2s linear;
+    transform: rotate(0);
+}
+
+.PosterDes-dropdown-wrap.opened>.material-icons {
+    transform: rotate(180deg);
+}
+
+/* ================= CONTENT BAR ================== */
+
+.PosterDes-content-bar {
+    position: fixed;
+    display: flex;
+    bottom: 20px;
+    right: 220px;
+    padding: 0 25px;
+    border-radius: 100px;
+    align-items: center;
+    overflow: hidden;
+    z-index: 10;
+    visibility: hidden;
+}
+
+body.layers-closed .PosterDes-content-bar {
+    right: 20px;
+}
+
+.PosterDes-content-bar .PosterDes-img-size {
+    line-height: 40px;
+    padding-right: 15px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+
+.PosterDes-img-size .material-icons {
+    font-size: 10px;
+}
+
+.PosterDes-content-bar .PosterDes-counter {
+    align-items: center;
+    margin-left: 0;
+    max-width: 105px;
+    padding: 0 20px 0 10px;
+    position: relative;
+    height: 40px;
+}
+
+.PosterDes-content-bar .PosterDes-counter .PosterDes-btn,
+.PosterDes-content-bar .PosterDes-counter .PosterDes-btn:hover,
+.PosterDes-content-bar .PosterDes-counter .PosterDes-btn:focus {
+    min-width: 15px;
+}
+
+.PosterDes-content-bar .PosterDes-counter .PosterDes-btn .material-icons {
+    font-size: 16px;
+}
+
+.PosterDes-counter .PosterDes-btn:disabled {
+    opacity: 1;
+}
+
+.PosterDes-content-bar .PosterDes-counter .PosterDes-form-field {
+    border: none !important;
+    background: transparent !important;
+    font-weight: 700
+}
+
+.PosterDes-content-bar .PosterDes-counter:after {
+    font-family: 'Material Icons';
+    content: 'percent';
+    position: absolute;
+    right: -25px;
+    line-height: 40px;
+    top: 0;
+    bottom: 0;
+    padding: 0 10px;
+    font-size: 12px;
+}
+
+#PosterDes-img-drag {
+    padding: 0 10px;
+    align-self: stretch;
+    border-radius: 0;
+}
+
+#PosterDes-img-drag .material-icons {
+    margin: 0;
+    font-size: 16px;
+}
+
+/* ================= ICON MENU ================== */
+
+#PosterDes-icon-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 75px;
+    display: flex;
+    flex-direction: column;
+    padding: 60px 0 0 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 11;
+    height: 100%;
+}
+
+button.PosterDes-icon-menu-btn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 12px 0;
+    cursor: pointer;
+    height: auto;
+    margin: 0;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    border-radius: 0;
+    transition: color 0.2s ease-in-out;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.PosterDes-icon-menu-title {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 0.9rem;
+    padding-top: 6px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+button.PosterDes-icon-menu-btn.stick-to-bottom {
+    margin-top: auto;
+}
+
+button.PosterDes-icon-menu-btn .material-icons {
+    font-size: 22px;
+}
+
+#PosterDes-icon-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 415px;
+    padding: 60px 0 0 75px;
+    overflow: hidden;
+    z-index: 10;
+    height: 100%;
+}
+
+#PosterDes-icon-panel-inner {
+    display: block;
+    overflow: auto;
+    height: 100%;
+    padding: 25px;
+}
+
+.PosterDes-icon-panel-content.panel-hide {
+    display: none !important;
+}
+
+.PosterDes-panel-inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+
+/* ================= CONTENT ================== */
+
+#PosterDes-content {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#PosterDes .canvas-container {
+    z-index: 1;
+}
+
+.PosterDes-panel-subtitle {
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    margin-bottom: 20px
+}
+
+#PosterDes-canvas-img-wrap {
+    display: none;
+}
+
+#PosterDes-canvas-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+#PosterDes-canvas-wrap {
+    position: relative;
+    z-index: 9;
+    visibility: hidden;
+}
+
+#PosterDes-canvas-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 99;
+    cursor: grab;
+}
+
+#PosterDes-canvas-loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 98;
+    display: none;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#PosterDes-canvas-loader .PosterDes-loader {
+    width: 40px;
+    height: 40px;
+    border-width: 3px;
+}
+
+/* ================= LAYERS ================== */
+
+#PosterDes-right-col {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 200px;
+    overflow: auto;
+    z-index: 7;
+    height: 100%;
+    padding: 60px 0 0 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.PosterDes-layers-title {
+    padding: 15px 10px;
+    margin: 0;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+}
+
+.PosterDes-layers-title .material-icons {
+    font-size: 1.25rem;
+    margin-right: 5px;
+}
+
+#PosterDes-layers {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: block;
+}
+
+#PosterDes-layers li {
+    position: relative;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    font-weight: 700;
+    line-height: 46px;
+    height: 48px;
+    font-size: 1rem;
+    justify-content: space-between;
+    overflow: hidden;
+    transition: color 0.1s linear;
+    cursor: move;
+}
+
+#PosterDes-layers li .layer-icons {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    padding: 0 10px;
+    z-index: 9;
+    width: 80%;
+    display: none
+}
+
+#PosterDes-layers li .layer-icons a {
+    cursor: pointer;
+    height: 100%;
+    min-width: 0;
+    text-align: center;
+    width: 25%;
+}
+
+#PosterDes-layers li .layer-icons .material-icons {
+    font-size: 16px;
+    line-height: 46px;
+    cursor: pointer;
+    text-decoration: none;
+    outline: none;
+    opacity: 1;
+    transition: opacity 0.1s linear;
+}
+
+#PosterDes-layers li .layer-icons .material-icons:hover {
+    opacity: 0.8;
+}
+
+#PosterDes-layers li .layer-name {
+    width: 100%;
+    padding: 0 25% 0 0;
+    background:transparent !important;
+    border:none !important;
+    outline:none !important;
+    box-shadow:none !important;
+    font-size:1rem;
+}
+
+#PosterDes-layers>li>.material-icons {
+    min-width: 30px;
+    text-align: center;
+    font-size: 18px;
+}
+
+#PosterDes-layers>li>.material-icons.layer-settings {
+    font-size: 16px;
+    width: 20%;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.1s linear;
+}
+
+#PosterDes-no-layer {
+    padding: 20px;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#PosterDes-no-layer a {
+    display: block;
+    text-align: right;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1rem;
+}
+
+#PosterDes-no-layer a:hover {
+    text-decoration: underline;
+}
+
+#PosterDes-layer-delete-wrap {
+    margin-top: auto;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    visibility: hidden;
+}
+
+#PosterDes-layer-delete-wrap .PosterDes-btn {
+    margin-left: 5px;
+    height: 34px;
+    padding: 0 10px;
+}
+
+#PosterDes-layer-delete-wrap .PosterDes-btn .material-icons {
+    margin: 0;
+    font-size: 16px
+}
+
+/* ================= GRID ================== */
+
+.PosterDes-grid {
+    position: relative;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(min(80px, 100%), 1fr));
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.PosterDes-grid.two-column {
+    grid-template-columns: repeat(auto-fill, minmax(min(100px, 100%), 1fr));
+}
+
+.PosterDes-grid.three-column {
+    grid-template-columns: repeat(auto-fill, minmax(min(60px, 100%), 1fr));
+}
+
+.PosterDes-grid.four-column {
+    grid-template-columns: repeat(auto-fill, minmax(min(50px, 100%), 1fr));
+}
+
+.PosterDes-grid.five-column {
+    grid-template-columns: repeat(auto-fill, minmax(min(50px, 100%), 1fr));
+    column-gap: 5px;
+    row-gap: 5px;
+}
+
+.PosterDes-grid.template-grid {
+    grid-template-columns: repeat(auto-fill, minmax(min(120px, 100%), 1fr));
+    min-height: 80px;
+}
+
+.PosterDes-frames-grid .grid-item,
+.PosterDes-grid .grid-item {
+    position: relative;
+    cursor: pointer;
+}
+
+.PosterDes-frames-grid img,
+.PosterDes-grid img {
+    vertical-align: bottom;
+    width: 100%;
+    height: auto;
+}
+
+.PosterDes-grid.svg-library-grid,
+.PosterDes-grid.media-library-grid {
+    grid-template-columns: repeat(auto-fill, minmax(min(100px, 100%), 1fr));
+}
+
+.PosterDes-grid .PosterDes-masonry-item-inner {
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between
+}
+
+.PosterDes-grid .PosterDes-masonry-item {
+    height: 100%;
+}
+
+.PosterDes-grid .notice {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+}
+
+.PosterDes-frame,
+.PosterDes-element {
+    position: relative;
+    height: 100%;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    justify-content: center;
+}
+
+.type-customSVG>a:before {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    text-transform: none;
+    content: 'color_lens';
+    margin-right: 5px;
+    font-size: 1.1rem;
+}
+
+.template-favorite,
+.PosterDes-frame .frame-favorite,
+.PosterDes-element .element-favorite {
+    position: absolute;
+    right: -1px;
+    top: -1px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 2;
+}
+
+.grid-item:hover .template-favorite,
+.PosterDes-frame:hover .frame-favorite,
+.PosterDes-element:hover .element-favorite {
+    visibility: visible;
+    opacity: 1;
+}
+
+.template-favorite {
+    right: 0px;
+    top: 0px;
+    width: 25px;
+    height: 25px;
+}
+
+.template-favorite>.PosterDes-btn-simple>.material-icons,
+.PosterDes-frame>.frame-favorite>.PosterDes-btn-simple>.material-icons,
+.PosterDes-element>.element-favorite>.PosterDes-btn-simple>.material-icons {
+    font-size: 18px;
+}
+
+.PosterDes-frames-grid .PosterDes-frame {
+    margin-top: 10px;
+    padding: 0;
+}
+
+.PosterDes-frames-grid {
+    margin-top: -10px;
+}
+
+#PosterDes-frame-favorites .PosterDes-frames-grid {
+    margin-top: 0;
+}
+
+.grid-icon-item {
+    text-decoration: none;
+    display: block;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+}
+
+.grid-icon-item div {
+    width: 100%;
+    text-align: center;
+}
+
+.grid-icon-item .material-icons {
+    font-size: 36px;
+    padding: 10px 0;
+}
+
+.grid-icon-label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 5px 0;
+}
+
+/* ================= ELEMENTS ================== */
+
+#PosterDes-filters.PosterDes-grid img {
+    border: 3px solid transparent;
+    border-radius: 0;
+    cursor: pointer;
+}
+
+#PosterDes-filters.PosterDes-grid .PosterDes-element,
+#PosterDes-filters.PosterDes-grid .PosterDes-element:hover {
+    border: none;
+}
+
+#PosterDes-filters.PosterDes-grid div label span {
+    display: block;
+    text-align: center;
+    padding: 5px 7px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    line-height: 1;
+    border-top-left-radius: 4px;
+}
+
+.PosterDes-element>.material-icons {
+    font-size: 26px;
+    line-height: 1.4;
+}
+
+/* ================= BUTTONS ================== */
+
+.PosterDes-btn-simple {
+    border: none !important;
+    background: none !important;
+    outline: none !important;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.PosterDes-btn {
+    padding: 8px 12px;
+    margin: 0;
+    line-height: 1.2;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.PosterDes-btn.btn-full {
+    width: 100%;
+}
+
+.PosterDes-btn:disabled {
+    opacity: 0.7;
+}
+
+.PosterDes-btn .material-icons {
+    font-size: 0.9rem;
+    margin-right: 4px;
+}
+
+.btn-full {
+    width: 100%;
+}
+
+.PosterDes-btn.PosterDes-lg-btn {
+    padding: 12px;
+}
+
+#text-flip-y .material-icons,
+#PosterDes-flip-vertical .material-icons,
+#img-flip-vertical .material-icons {
+    transform: rotate(90deg);
+}
+
+#PosterDes-crop-btns.disabled {
+    pointer-events: none !important;
+    opacity: 0.5;
+}
+
+/* ================= BLOCKS ================== */
+
+.PosterDes-btn-group {
+    display: flex;
+}
+
+.icon-group .PosterDes-btn {
+    padding: 8px 0;
+    flex: 1;
+    border-radius: 0;
+}
+
+.icon-group .PosterDes-btn:last-child {
+    border: none !important;
+}
+
+.icon-group .PosterDes-btn .material-icons {
+    font-size: 16px;
+    margin: 0;
+}
+
+.PosterDes-aspect-ratio {
+    display: flex;
+    align-items: center;
+}
+
+.PosterDes-resize-wrap {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.PosterDes-aspect-ratio > .material-icons,
+.PosterDes-resize-wrap > .material-icons {
+    font-size: 12px;
+    min-width: 20px;
+    text-align: center;
+}
+
+.PosterDes-aspect-ratio .PosterDes-btn,
+.PosterDes-resize-wrap .PosterDes-btn {
+    margin-left: 10px;
+    padding: 0;
+    height: 34px;
+    min-width: 34px;
+}
+
+.PosterDes-aspect-ratio .PosterDes-btn .material-icons,
+.PosterDes-resize-wrap .PosterDes-btn .material-icons {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.PosterDes-btn-set {
+    display: flex;
+    align-items: center;
+}
+
+.PosterDes-btn-set .PosterDes-btn:first-child {
+    width: 100%
+}
+
+.PosterDes-btn-set .PosterDes-btn:last-child .material-icons {
+    margin: 0;
+    font-size: 16px;
+}
+
+.PosterDes-btn-set .PosterDes-btn:last-child {
+    margin-left: 5px;
+    min-width: 40px;
+}
+
+.PosterDes-select-btn-set {
+    display: flex;
+    align-items: stretch;
+}
+
+.PosterDes-select-btn-set .PosterDes-btn {
+    margin-left: 10px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.PosterDes-select-btn-set .PosterDes-btn .material-icons {
+    margin: 0;
+    font-size: 16px;
+}
+
+.PosterDes-block-50 {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 20px
+}
+
+.PosterDes-block-50:last-child {
+    margin: 0
+}
+
+.PosterDes-block-50>* {
+    width: 50%;
+}
+
+.PosterDes-block-50>*:first-child {
+    margin-right: 5px;
+}
+
+.PosterDes-block-50>*:last-child {
+    margin-left: 5px;
+}
+
+.PosterDes-block-50 .PosterDes-btn {
+    height: 34px;
+}
+
+.PosterDes-block-33 {
+    display: flex;
+    align-items: flex-end;
+}
+
+.PosterDes-block-33>div {
+    flex: 1
+}
+
+.PosterDes-block-33>div:first-child {
+    margin-right: 10px;
+}
+
+.PosterDes-block-33>div:last-child {
+    margin-left: 10px;
+}
+
+.PosterDes-block-50 label,
+.PosterDes-block-33 label {
+    font-weight: 700;
+    margin: 0 0 5px 0 !important;
+    display: block;
+}
+
+/* ================= TOOLTIP ================== */
+
+.tooltip {
+    position: relative;
+}
+
+.tooltip:after {
+    content: attr(data-title);
+    font-size: 0.9rem;
+    position: absolute;
+    padding: 7px 10px;
+    bottom: -10px;
+    left: 50%;
+    white-space: nowrap;
+    opacity: 0;
+    z-index: 99999;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(100%);
+    text-transform: none;
+    font-weight: 700;
+    border-radius: 2px;
+    line-height: 1.2;
+}
+
+.tooltip:before {
+    border: solid;
+    border-width: 0 6px 6px 6px;
+    bottom: -10px;
+    content: "";
+    left: 50%;
+    position: absolute;
+    z-index: 99999;
+    visibility: hidden;
+    transform: translateX(-50%);
+}
+
+.tooltip:hover:after,
+.tooltip:hover:before {
+    opacity: 1;
+    transition: all 0.1s ease 0.5s;
+    visibility: visible;
+}
+
+.tooltip.tooltip-top:after {
+    top: -10px;
+    bottom: auto;
+    transform: translateX(-50%) translateY(-100%);
+}
+
+.tooltip.tooltip-top:before {
+    border-width: 6px 6px 0 6px;
+    top: -10px;
+    bottom: auto;
+}
+
+/* ================= PAGINATION ================== */
+
+.PosterDes-pagination ul {
+    list-style: none;
+    margin: 30px 0 0 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.PosterDes-pagination ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 3px;
+    padding: 0;
+    font-size: 1rem;
+    line-height: 30px;
+    min-width: 30px;
+    font-weight: 700;
+    border-radius: 4px;
+}
+
+.PosterDes-pagination ul li.disabled {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.PosterDes-pagination ul li .material-icons {
+    font-size: 1rem;
+    line-height: 30px;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+.PosterDes-pagination ul li a {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    text-align: center
+}
+
+.PosterDes-accordion .PosterDes-pagination ul {
+    margin: 20px 0 0 0;
+    justify-content: center;
+}
+
+.PosterDes-accordion .PosterDes-pagination ul li {
+    margin: 0;
+    padding: 0;
+    font-size: 0.9rem;
+    line-height: 1;
+    min-width: 0;
+    border: none;
+    border-radius: 0;
+}
+
+.PosterDes-accordion .PosterDes-pagination ul li .material-icons {
+    font-size: 0.9rem;
+    line-height: 1;
+}
+
+.PosterDes-accordion .PosterDes-pagination ul li a,
+.PosterDes-accordion .PosterDes-pagination ul li>span {
+    padding: 7px;
+}
+
+/* ================= ACCORDION ================== */
+
+ul.PosterDes-accordion {
+    margin: 0 0 25px 0;
+    padding: 0;
+    list-style: none;
+    border-bottom: none;
+}
+
+ul.PosterDes-accordion>li {
+    margin: 0 0 10px 0;
+    padding: 0;
+    border-radius: 4px;
+}
+
+ul.PosterDes-accordion>li>div {
+    padding: 20px;
+    display: none;
+}
+
+ul.PosterDes-accordion>li.opened>div {
+    display: block;
+}
+
+ul.PosterDes-accordion>li>a {
+    font-family: 'Roboto Condensed', sans-serif;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.2s ease-in-out;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    padding: 8px 5px 8px 10px;
+    cursor: pointer;
+}
+
+ul.PosterDes-accordion>li>a>.arrow {
+    transform: rotate(0deg);
+    font-size: 20px;
+}
+
+ul.PosterDes-accordion>li.opened>a>.arrow {
+    transform: rotate(180deg);
+}
+
+ul.PosterDes-accordion>li>a>.arrow {
+    margin-left: auto;
+}
+
+.material-icons.accordion-icon {
+    font-size: 1.1rem;
+    margin-right: 5px;
+}
+
+ul.PosterDes-accordion>li>a>.data-count {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.1;
+    font-size: 0.8rem;
+    padding: 2px 4px;
+    border-radius: 4px;
+    margin-left: auto;
+    margin-right: 5px;
+}
+
+#PosterDes-frames ul.PosterDes-accordion>li>a>.arrow,
+#PosterDes-elements ul.PosterDes-accordion>li>a>.arrow {
+    margin-left: 0;
+}
+
+/* ================= RANGESLIDER ================== */
+
+.PosterDes-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 3px;
+    outline: none;
+    opacity: 1;
+}
+
+.PosterDes-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    border: none;
+    box-shadow: none;
+    border-radius: 100%;
+}
+
+.PosterDes-slider::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    border: none;
+    box-shadow: none;
+    border-radius: 100%;
+}
+
+/* ================= COUNTER ================== */
+
+.PosterDes-counter {
+    display: flex;
+    align-items: stretch;
+    max-width: 120px;
+    margin-left: auto;
+}
+
+.PosterDes-counter .PosterDes-btn,
+.PosterDes-counter .PosterDes-btn:hover,
+.PosterDes-counter .PosterDes-btn:focus {
+    padding: 0;
+    border-radius: 0;
+    min-width: 30px;
+}
+
+.PosterDes-counter .PosterDes-btn .material-icons {
+    margin: 0;
+}
+
+.PosterDes-counter .PosterDes-form-field {
+    text-align: center;
+}
+
+.PosterDes-control-wrap.label-block .PosterDes-counter {
+    max-width: 100%;
+}
+
+/* ================= CONTROLS ================== */
+
+.PosterDes-control-wrap {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    align-items: center;
+}
+
+.PosterDes-control-wrap.hidden {
+    display: none;
+}
+
+.PosterDes-accordion .conditional-settings .PosterDes-control-wrap,
+.PosterDes-accordion .conditional-settings .PosterDes-control-wrap:first-child,
+.PosterDes-control-wrap {
+    margin-top: 15px;
+}
+
+#PosterDes-qrcode-settings .PosterDes-control-wrap:first-child,
+#PosterDes-settings .PosterDes-control-wrap:first-child,
+.PosterDes-accordion .PosterDes-control-wrap:first-child {
+    margin-top: 0;
+}
+
+.PosterDes-control-wrap.nomargin {
+    margin-bottom: 0;
+}
+
+.PosterDes-control-wrap.label-block {
+    flex-direction: column;
+}
+
+.PosterDes-control-label,
+.PosterDes-control {
+    width: 50%;
+    min-width: 50%;
+}
+
+.PosterDes-control-label {
+    padding: 0 10px 0 0;
+    font-size: 1rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+
+.PosterDes-control-wrap.label-block .PosterDes-control-label {
+    padding: 0;
+}
+
+.PosterDes-control-label span {
+    font-family: 'Roboto', sans-serif;
+    margin-left: auto;
+    line-height: 1;
+    padding: 4px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.PosterDes-control-wrap.label-block .PosterDes-control-label,
+.PosterDes-control-wrap.label-block .PosterDes-control {
+    width: 100%;
+    min-width: 100%;
+}
+
+.PosterDes-control-wrap.label-block .PosterDes-control-label {
+    margin-bottom: 5px;
+}
+
+.PosterDes-control-wrap.label-block .PosterDes-control-label.slider-label {
+    margin-bottom: 0;
+}
+
+.PosterDes-control-desc {
+    font-size: 0.9rem;
+    font-style: italic;
+    padding-top: 5px;
+}
+
+#PosterDes-draw-settings,
+#eraser-width-wrap {
+    display: none;
+}
+
+.PosterDes-form-field {
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    padding: 7px;
+    outline: none;
+    box-shadow: none;
+    font-size: 1rem;
+    line-height: 1.3;
+}
+
+.PosterDes-form-field:disabled {
+    opacity: 0.7;
+}
+
+.PosterDes-hidden-file {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.PosterDes-hidden-file+label * {
+    pointer-events: none;
+}
+
+.PosterDes-search-box {
+    display: flex;
+}
+
+.PosterDes-search-box button {
+    margin-left: 5px;
+}
+
+.PosterDes-search-box button .material-icons {
+    margin: 0;
+    font-size: 16px;
+}
+
+.PosterDes-search-wrap {
+    position: relative;
+    display: flex;
+    margin-bottom: 25px;
+}
+
+.PosterDes-search-wrap .material-icons {
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    line-height: 1;
+    font-size: 18px;
+    z-index: 9;
+}
+
+.PosterDes-search-wrap .PosterDes-form-field {
+    padding: 11px 40px 11px 11px;
+    border-radius: 4px;
+}
+
+#PosterDes-element-search-icon.cancel,
+#PosterDes-icon-search-icon.cancel {
+    cursor: pointer;
+}
+
+.PosterDes-sub-settings {
+    margin-top: 25px;
+    padding-top: 10px;
+}
+
+.PosterDes-accordion .PosterDes-sub-settings {
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.PosterDes-sub-settings.nomargin {
+    margin-top: 0px;
+    padding-top: 0px;
+    border: none;
+}
+
+.sp-colorize-container {
+    width: 40px !important;
+}
+
+.PosterDes-submit-btns {
+    display: flex;
+}
+
+.PosterDes-submit-btns .PosterDes-btn {
+    width: 50%;
+}
+
+.PosterDes-submit-btns .PosterDes-btn:first-child {
+    margin-right: 5px;
+}
+
+.PosterDes-submit-btns .PosterDes-btn:last-child {
+    margin-left: 5px;
+}
+
+.PosterDes-control-group {
+    display: flex;
+    align-items: flex-end;
+}
+
+.PosterDes-control-group>div {
+    width: 25%;
+    margin-right: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.PosterDes-control-group>div:last-child {
+    margin-right: 0;
+}
+
+.PosterDes-control-group .PosterDes-btn {
+    height: 34px;
+    width: 100%;
+}
+
+.PosterDes-control-group label {
+    padding: 0 0 5px 0;
+    font-weight: 700
+}
+
+#PosterDes-preferences {
+    margin-bottom: 20px;
+}
+
+/* ================= COLORPICKER ================== */
+
+.sp-original-input-container {
+    display: flex;
+    margin-left: auto !important;
+    height: 34px;
+}
+
+.PosterDes-colorpicker,
+.PosterDes-colorpicker:focus,
+.PosterDes-form-field {
+    width: 100%;
+    padding: 7px;
+    outline: none;
+    box-shadow: none;
+    color: #aaa;
+    font-size: 1rem;
+}
+
+.sp-clear-display {
+    background-image: none;
+}
+
+.sp-clear-enabled .sp-clear {
+    top: 0;
+}
+
+.sp-clear-display:before {
+    font-family: 'Material Icons';
+    content: 'block';
+    line-height: 14px;
+    font-size: 14px;
+}
+
+/* ================= SELECT ================== */
+
+.PosterDes-select {
+    border-radius: 0;
+    cursor: pointer;
+    height: 34px;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    padding: 5px 30px 5px 5px;
+    outline: none;
+    font-size: 1rem;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+}
+
+.PosterDes-select:disabled {
+    opacity: 0.7;
+}
+
+.PosterDes-select:focus {
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075), 0 0 0 0 rgba(50, 151, 211, 0.5);
+}
+
+.select2-container {
+    z-index: 99999;
+}
+
+.select2-container--dark {
+    max-width: 100%;
+}
+
+.select2-container--dark .select2-selection--single {
+    border: 0px;
+    height: 34px;
+}
+
+.select2-container--dark .select2-selection--single .select2-selection__rendered {
+    line-height: 32px;
+}
+
+.select2-container--dark .select2-selection--single .select2-selection__arrow {
+    height: 28px;
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    width: 20px;
+}
+
+.select2-container--dark .select2-selection--single .select2-selection__arrow b {
+    top: 60%;
+    border-style: solid;
+    border-width: 5px 4px 0 4px;
+    height: 0;
+    left: 50%;
+    margin-left: -4px;
+    margin-top: -2px;
+    position: absolute;
+    width: 0;
+}
+
+.select2-container--dark .select2-selection--single .select2-selection__clear {
+    cursor: pointer;
+    float: right;
+    font-weight: bold;
+}
+
+.select2-container--dark .select2-selection--single {
+    border-radius: 0px;
+}
+
+.select2-container--dark.select2-container--open .select2-selection__arrow b {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+}
+
+.select2-container--dark span.select2-search input {
+    height: 30px !important;
+}
+
+.select2-drop {
+    margin-top: -2px;
+    border-top: 0;
+    border-radius: 0px !important;
+    -webkit-border-radius: 0 0 6px 6px;
+    -moz-border-radius: 0 0 6px 6px;
+    border-radius: 0 0 6px 6px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.select2-drop.select2-drop-above {
+    margin-top: 2px;
+    border-bottom: 0;
+    -webkit-border-radius: 6px 6px 0 0;
+    -moz-border-radius: 6px 6px 0 0;
+    border-radius: 6px 6px 0 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.select2-container--dark .select2-search {
+    margin-top: 3px;
+}
+
+.select2-container--dark .select2-search input {
+    height: 26px;
+    outline: none;
+}
+
+.select2-container--dark .select2-search--dropdown {
+    padding: 5px;
+}
+
+.select2-container--dark .select2-results__group {
+    display: block;
+    padding: 10px 5px 5px 5px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.select2-container--dark .select2-results__option {
+    padding: 5px;
+    line-height: 1.2;
+    border-radius: 2px;
+}
+
+.select2-container--dark .select2-item {
+    display: flex;
+    align-items: center;
+}
+
+.select2-container--dark .material-icons {
+    font-size: 1rem;
+    margin-right: 5px;
+}
+
+.select2-results>.select2-results__options {
+    max-height: 250px;
+    overflow: auto;
+}
+
+/* ================= TABS ================== */
+
+.PosterDes-tabs {
+    position: relative;
+}
+
+.PosterDes-tabs .PosterDes-tab {
+    display: none;
+}
+
+.PosterDes-tabs .PosterDes-tab.active {
+    display: block;
+}
+
+.PosterDes-tabs-menu {
+    margin: 0 0 20px 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+.PosterDes-tabs-menu li {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1rem;
+    margin: 0;
+    padding: 5px 10px;
+    line-height: 1.2;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.PosterDes-tabs-menu li .material-icons {
+    font-size: 1.1rem;
+    margin-right: 5px;
+}
+
+/* ================= TOGGLE ================== */
+
+.PosterDes-toggle {
+    cursor: pointer;
+    display: inline-block;
+}
+
+.PosterDes-toggle-switch {
+    display: inline-block;
+    border-radius: 20px;
+    width: 40px;
+    height: 20px;
+    position: relative;
+    vertical-align: middle;
+    transition: background 0.25s;
+}
+
+.PosterDes-toggle-switch:before,
+.PosterDes-toggle-switch:after {
+    content: "";
+}
+
+.PosterDes-toggle-switch:before {
+    display: block;
+    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    transition: left 0.25s;
+}
+
+.PosterDes-toggle-checkbox:checked+.PosterDes-toggle-switch:before {
+    left: 22px;
+}
+
+.PosterDes-toggle-checkbox {
+    position: absolute;
+    visibility: hidden;
+}
+
+/* ================= CHECKBOX ================== */
+
+.PosterDes-checkbox {
+    display: block;
+    position: relative;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.PosterDes-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.PosterDes-checkmark {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 20px;
+    width: 20px;
+    border-radius: 4px;
+}
+
+.PosterDes-checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.PosterDes-checkbox input:checked~.PosterDes-checkmark:after {
+    display: block;
+}
+
+.PosterDes-checkbox .PosterDes-checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.PosterDes-checkbox-control,
+.PosterDes-toggle-control {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.PosterDes-checkbox-control {
+    padding-right: 20px
+}
+
+/* ================= CUSTOM CURSOR ================== */
+
+.tm-cursor-none,
+.tm-cursor-none * {
+    cursor: none !important;
+}
+
+.tm-cursor {
+    pointer-events: none;
+    position: fixed;
+    z-index: 9999999999;
+    top: 0;
+    left: 0;
+    display: block;
+    opacity: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: opacity 300ms linear, transform 300ms linear, background-color 300ms linear, border 300ms linear, border-radius 300ms linear;
+    visibility: hidden;
+}
+
+.tm-cursor.moving {
+    opacity: 1;
+}
+
+.tm-cursor:before {
+    pointer-events: none;
+    content: ' ';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999999999;
+    transition: opacity 300ms linear, transform 300ms linear, background-color 300ms linear, border 300ms linear, border-radius 300ms linear;
+}
+
+.tm-pointer-simple.tm-cursor {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(16, 39, 112, 0.2);
+}
+
+/* ================= MODAL ================== */
+
+.PosterDes-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: none;
+}
+
+.PosterDes-modal-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    padding: 4%;
+    overflow: auto
+}
+
+.PosterDes-modal-inner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 4px;
+    max-width: 800px;
+}
+
+.PosterDes-modal-inner.large {
+    max-width: 1000px;
+}
+
+.PosterDes-modal-inner>.PosterDes-tabs>.PosterDes-tabs-menu {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    border-bottom: none;
+    padding: 0px;
+    overflow: hidden;
+}
+
+.PosterDes-modal-inner>.PosterDes-tabs>.PosterDes-tabs-menu>li {
+    font-family: 'Roboto Condensed', sans-serif;
+    text-transform: uppercase;
+    padding: 20px;
+    border-radius: 0;
+    margin: 0 4px 0 0;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    line-height: 1;
+}
+
+.PosterDes-modal-inner>.PosterDes-tabs>.PosterDes-tab,
+.PosterDes-modal-bg {
+    padding: 40px;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+.PosterDes-modal-inner label {
+    margin: 0 5px 0 0;
+}
+
+.PosterDes-modal-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    line-height: 36px;
+    height: 36px;
+    width: 36px;
+    border-radius: 100%;
+    text-align: center;
+    z-index: 99999;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.PosterDes-modal-close .material-icons {
+    font-size: 20px;
+    line-height: 36px;
+}
+
+#modal-select-img .PosterDes-btn-set button,
+#modal-select-img .PosterDes-btn-set .PosterDes-file-field {
+    width: 50%;
+}
+
+#modal-select-img .PosterDes-btn-set .material-icons {
+    margin-right: 5px;
+}
+
+#modal-select-img label {
+    margin: 0;
+}
+
+#modal-empty-canvas .PosterDes-resize-wrap .PosterDes-btn {
+    min-width: 120px;
+}
+
+#modal-empty-canvas .PosterDes-resize-wrap {
+    margin: 0;
+}
+
+.PosterDes-keep {
+    display: flex;
+    padding: 20px 0 0 20px;
+    font-style: italic;
+    align-items: flex-start;
+}
+
+.PosterDes-keep>div {
+    margin-left: 5px;
+}
+
+#PosterDes-download-as-json,
+#PosterDes-save-as-json {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px dashed #303030;
+}
+
+.PosterDes-select-btn-block {
+    display: flex;
+}
+
+.PosterDes-select-btn-block>div:first-child {
+    width: 75%;
+    padding-right: 20px;
+    margin-right: 20px;
+    border-right: 1px dashed #303030
+}
+
+.PosterDes-select-btn-block>div:last-child {
+    width: 25%;
+}
+
+.PosterDes-select-btn-block .PosterDes-btn-set .PosterDes-btn:last-child .material-icons {
+    font-size: 0.9rem
+}
+
+/* ================= TEMPLATE LIBRARY ================== */
+
+.PosterDes-templates-menu-wrap {
+    display: flex;
+    margin-bottom: 30px;
+    align-items: stretch;
+    margin-top: -50px;
+    max-width: 450px;
+    margin-left: auto;
+    z-index: 2;
+}
+
+.PosterDes-templates-menu-wrap>* {
+    margin-right: 10px;
+}
+
+.PosterDes-templates-menu-wrap>*:last-child {
+    margin-right: 0;
+}
+
+.PosterDes-templates-menu-wrap button .material-icons {
+    margin: 0;
+    font-size: 16px;
+}
+
+.PosterDes-template-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-bottom: none;
+}
+
+.PosterDes-template-list li {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+}
+
+.PosterDes-template-list li.active {
+    pointer-events: none;
+}
+
+.PosterDes-template-list li.active button {
+    opacity:0.5;
+}
+
+.PosterDes-template-list li:last-child {
+    border: none !important;
+}
+
+.PosterDes-template-list li div {
+    flex: 1;
+}
+
+.PosterDes-template-list li div:first-child {
+    font-weight: 700;
+    font-size: 1rem
+}
+
+.PosterDes-template-list li div:last-child {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.PosterDes-template-list li div:last-child button {
+    margin-left: 10px;
+    font-size: 0.8rem;
+    padding: 6px 10px;
+}
+
+#PosterDes-history-list li .info {
+    display: flex;
+    align-items: center;
+}
+  
+#PosterDes-history-list li .info .material-icons {
+    min-width: 30px;
+    text-align: center;
+    font-size: 18px;
+}
+
+#PosterDes-history-list li .info span.time {
+    font-size:0.9rem;
+    line-height: 1;
+    padding:4px;
+    margin:0 10px;
+    border-radius: 2px;
+}
+
+.PosterDes-history-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.PosterDes-history-title .PosterDes-btn {
+  font-size: 0.8rem;
+  padding: 6px 10px;
+}
+
+.PosterDes-history-count {
+    margin: 10px 0 0 0;
+    font-style: italic;
+    display:block;
+    text-align: right;
+}
+
+/* ================= MEDIA LIBRARY ================== */
+
+#PosterDes-library-all-menu,
+#PosterDes-library-my-menu,
+#PosterDes-my-templates-menu {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+#PosterDes-library-all-menu>div,
+#PosterDes-library-my-menu>div,
+#PosterDes-my-templates-menu>div {
+    display: flex;
+}
+
+#PosterDes-all-templates-noimg,
+#PosterDes-library-all-noimg,
+#PosterDes-library-my-noimg {
+    margin: 0;
+}
+
+#PosterDes-img-media-library,
+#PosterDes-overlay-img-media-library,
+#PosterDes-overlay-delete {
+    margin-top: 10px;
+}
+
+.media-library-grid .PosterDes-img-wrap {
+    min-height: 60px;
+}
+
+/* ================= SVG LIBRARY ================== */
+
+#PosterDes-svg-library-all-menu,
+#PosterDes-svg-library-my-menu {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+#PosterDes-svg-library-all-menu>div,
+#PosterDes-svg-library-my-menu>div {
+    display: flex;
+}
+
+#PosterDes-svg-library-all-noimg,
+#PosterDes-svg-library-my-noimg {
+    margin: 0;
+}
+
+#PosterDes-svg-media-library {
+    margin-top: 10px;
+}
+
+#PosterDes-svg-library-all .PosterDes-img-wrap,
+#PosterDes-svg-library-my .PosterDes-img-wrap{
+  padding:5px
+}
+
+/* ================= MASONRY ================== */
+
+.PosterDes-masonry {
+    column-gap: 15px;
+    line-height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.PosterDes-masonry.six-column {
+    column-count: 6;
+}
+
+.PosterDes-masonry.five-column {
+    column-count: 5;
+}
+
+.PosterDes-masonry.four-column {
+    column-count: 4;
+}
+
+.PosterDes-masonry.three-column {
+    column-count: 3;
+}
+
+.PosterDes-masonry.two-column {
+    column-count: 2;
+}
+
+.PosterDes-masonry.one-column {
+    column-count: 1;
+}
+
+.PosterDes-masonry-item {
+    position: relative;
+    break-inside: avoid;
+    margin: 0;
+    cursor: pointer;
+}
+
+.PosterDes-masonry-item img {
+    max-width: 100%;
+    width: 100%;
+}
+
+.PosterDes-masonry-item .favorite {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+    padding: 0 0 4px 4px;
+}
+
+.PosterDes-masonry-item:hover .favorite {
+    display: block;
+}
+
+.PosterDes-masonry-item .favorite .material-icons {
+    font-size: 18px
+}
+
+.PosterDes-masonry-item-inner {
+    position: relative;
+    margin-bottom: 15px;
+    display: inline-block;
+    width: 100%;
+}
+
+.grid-item:hover .PosterDes-masonry-item-inner,
+.PosterDes-masonry-item-inner:hover {
+    border-color: #fff;
+}
+
+.PosterDes-masonry-item-desc {
+    width: 100%;
+    display: none;
+    line-height: 1.1;
+    padding: 8px 4px 4px 4px;
+    font-weight: 700;
+    text-align: center;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: absolute;
+    bottom:0;
+}
+  
+.PosterDes-masonry-item-inner:hover .PosterDes-masonry-item-desc {
+    display: block;
+}
+
+.PosterDes-svg-library-delete,
+.PosterDes-library-delete {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    z-index: 9;
+    cursor: pointer;
+    line-height: 20px;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    text-align: center;
+}
+
+.PosterDes-svg-library-delete .material-icons,
+.PosterDes-library-delete .material-icons {
+    font-size: 18px;
+    line-height: 20px;
+}
+
+/* ================= FRONT-END EDITOR ================== */
+
+#PosterDes.frontend #modal-select-img .PosterDes-btn-set .PosterDes-file-field {
+    width:100%;
+}
+
+#PosterDes.frontend .frame-favorite,
+#PosterDes.frontend .element-favorite,
+#PosterDes.frontend .template-favorite {
+    display: none !important;
+}
+
+/* ================= MEDIA QUERIES ================== */
+
+@media only screen and (max-width: 1200px) {
+    #PosterDes-body {
+        padding: 0 0 0 75px !important;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .PosterDes-modal-inner>.PosterDes-tabs>.PosterDes-tabs-menu>li {
+        width: 100%;
+        margin: 0;
+    }
+
+    .PosterDes-templates-menu {
+        width: 100%;
+    }
+
+    .PosterDes-templates-menu-wrap {
+        margin-top: 0;
+        max-width: 100%;
+    }
+
+    .PosterDes-select-btn-block {
+        flex-direction: column;
+    }
+
+    .PosterDes-select-btn-block>div,
+    .PosterDes-select-btn-block>div:first-child,
+    .PosterDes-select-btn-block>div:last-child {
+        width: 100% !important;
+        padding: 0;
+        margin: 0;
+        border: none
+    }
+
+    .PosterDes-select-btn-block>div:last-child {
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    html {
+        font-size: 13px;
+    }
+
+    #PosterDes-body {
+        padding: 0 0 0 54px !important;
+    }
+
+    .PosterDes-logo img.logo-desktop {
+        display: none;
+    }
+
+    .PosterDes-logo img.logo-mobile {
+        display: block;
+    }
+
+    #PosterDes-icon-menu {
+        width: 54px
+    }
+
+    .PosterDes-icon-menu-title {
+        display: none;
+    }
+
+    button.PosterDes-icon-menu-btn {
+        padding: 15px 0
+    }
+
+    #PosterDes-icon-panel {
+        width: 100%;
+        padding: 60px 0 0 54px;
+    }
+
+    #PosterDes-toggle-left {
+        display: none;
+    }
+
+    .PosterDes-modal-close {
+        top: 10px;
+        right: 10px;
+    }
+
+    #modal-select-img .PosterDes-btn-set {
+        flex-wrap: wrap;
+    }
+
+    #modal-select-img .PosterDes-btn-set label,
+    #modal-select-img .PosterDes-btn-set button,
+    #modal-select-img .PosterDes-btn-set .PosterDes-file-field {
+        width: 100%;
+        margin: 0;
+    }
+
+    #modal-select-img .PosterDes-btn-set label {
+        margin-bottom: 10px
+    }
+
+    .PosterDes-template-list li {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .PosterDes-template-list li div {
+        width: 100%;
+    }
+
+    .PosterDes-template-list li div:last-child {
+        margin-top: 10px;
+    }
+
+    #PosterDes-top-bar .PosterDes-btn .PosterDes-btn-text {
+        display: none;
+    }
+    
+    #PosterDes-top-bar .PosterDes-btn .material-icons {
+        margin: 0;
+        font-size:18px;
+    }
+
+    .tooltip:after,
+    .tooltip:before {
+        display: none;
+    }
+
+}

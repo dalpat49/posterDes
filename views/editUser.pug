@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Edit user data admin-panel</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.png">
+
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/flowbite@1.6.0/dist/flowbite.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+</head>
+<body >
+
+
+<div class="">
+  <div class="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-white  text-black ">
+    <div class="fixed w-full flex items-center justify-between h-14 bg-blue-900 text-white z-10">
+      <div class="flex items-center justify-start md:justify-center pl-3 w-14 md:w-64 h-14 bg-blue-900  border-none">
+        <img class="w-7 h-7 md:w-10 md:h-10 mr-2 rounded-md overflow-hidden" src="/img/#{adminDetails.image}" />
+        <span class="hidden md:block">#{adminDetails.name}</span>
+      </div>
+      <div class="flex justify-between items-center h-14 bg-blue-900  header-right">
+
+        <ul class="flex items-center">
+
+          <li>
+            <div class="block w-px h-6 mx-3 bg-gray-400 "></div>
+          </li>
+          <li>
+            <a href="/adminLogout" class="flex items-center mr-4 hover:text-blue-100">
+              <span class="inline-flex mr-1">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+              </span>Logout
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="fixed flex flex-col top-14 left-0 w-14 hover:w-64 md:w-64 bg-blue-900  h-full text-white transition-all duration-300 border-none z-10 sidebar">
+      <div class="overflow-y-auto overflow-x-hidden flex flex-col justify-between flex-grow">
+        <ul class="flex flex-col py-4 space-y-1">
+          <li class="px-5 hidden md:block">
+            <div class="flex flex-row items-center h-8">
+              <div class="text-sm font-light tracking-wide text-gray-400 uppercase">Main</div>
+            </div>
+          </li>
+          <li>
+            <a href="/admin/adminHome" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800  text-white-600 hover:text-white border-l-4 border-transparent hover:border-blue-500 d pr-6">
+              <span class="inline-flex justify-center items-center ml-4">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+              </span>
+              <span class="ml-2 text-sm tracking-wide truncate">Dashboard</span>
+            </a>
+          </li>
+          
+        
+          
+          
+          <li>
+            <a href="/admin/adminProfile" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800  text-white-600 hover:text-white border-l-4 border-transparent hover:border-blue-500 d pr-6">
+              <span class="inline-flex justify-center items-center ml-4">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+              </span>
+              <span class="ml-2 text-sm tracking-wide truncate">Profile</span>
+            </a>
+          </li>
+
+        </ul>
+        <p class="mb-14 px-5 py-3 hidden md:block text-center text-xs">Copyright @2023</p>
+      </div>
+    </div>
+
+
+<!-- component -->
+<div class="h-full ml-13 mt-14 mb-10 md:ml-64">
+
+<section class="max-w-4xl p-6 mx-auto bg-indigo-600 rounded-md shadow-md mt-20">
+  <h1 class="text-xl font-bold text-white capitalize ">Edit User Details</h1>
+
+
+  <form action="/admin/updateUser" method="post" enctype="multipart/form-data" name="editUser" onsubmit="return validateUserEditForm()">
+    <input type = "hidden" id="userid" name="userid" value="#{UserDetails._id}">
+    <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
+
+      <div>
+        <label class="text-white" for="name">Fullname</label>
+        <input  type="text" id="name" name="name" value="#{UserDetails.fullname}" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md ">
+        <p class="text-xs italic text-red-500 error" id="nameErr"> </p>
+
+      </div>
+
+      <div>
+        <label class="text-white" for="email">Email Address</label>
+        <input id="emailAddress" name="email"  type="email" value="#{UserDetails.email}" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md ">
+        <p class="text-xs italic text-red-500 error" id="emailErr">  </p>
+
+      </div>
+      <div>
+        <label class="text-white" for="number">Number</label>
+        <input id="number" type="number" name="number" value="#{UserDetails.number}" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md ">
+        <p class="text-xs italic text-red-500 error" id="numberErr">  </p>
+
+      </div>
+
+      <input type="hidden" name="oldImage" value="#{UserDetails.photo}" />
+      <div>
+        <label for="image" class="block mb-2 text-sm font-medium text-gray-900 ">Image:</label>
+        <input type="file" name="image" id="image" class="block w-full mb-5 text-xs text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 " >
+      </div>
+
+
+</div>
+
+    <div class="flex justify-end mt-6 gap-2">
+      <button type="button" data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="px-6 py-2 leading-5 text-white transition-colors duration-200 transform bg-green-500 rounded-md hover:bg-green-700 focus:outline-none focus:bg-gray-600">Change user Password</button>
+      <button type="submit" class="px-6 py-2 leading-5 text-white transition-colors duration-200 transform bg-pink-500 rounded-md hover:bg-pink-700 focus:outline-none focus:bg-gray-600">Save</button>
+    </div>
+</form>
+</section>
+<div id="authentication-modal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
+<div class="relative w-full h-full max-w-2xl md:h-auto">
+
+  <form action="/admin/changeUserPassword" method="post" class="relative bg-white rounded-lg shadow"  name="updatePasswordForm" onsubmit="return validateChangePasswordForm()">
+
+    <div class="flex items-start justify-between p-4 border-b rounded-t ">
+      <h3 class="text-xl font-semibold text-gray-900 "> change password
+      </h3>
+      <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center " data-modal-hide="authentication-modal">
+        <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
+      </button>
+    </div>
+
+    <div class="p-6 space-y-6">
+      <div class="grid grid-cols-6 gap-6">
+        <div class="col-span-6 sm:col-span-3">
+          <label for="passwordEmail" class="block mb-2 text-sm font-medium text-gray-900 ">Email:</label>
+          <input type="email" name="passwordEmail" id="passwordEmail" value="#{UserDetails.email}" readonly class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 "  >
+        </div>
+          <div class="col-span-6 sm:col-span-3">
+            <label for="password" class="block mb-2 text-sm font-medium text-gray-900 ">Password:</label>
+            <input type="password" name="password" id="password"  autocomplete="off "class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 "  placeholder="*********" >
+            <p class="text-xs italic text-red-500 error" id="passwordErr">  </p>
+
+            <input type="hidden" name="UserID" id="UserID"  value="#{UserDetails._id}">
+        </div>
+        <div class="col-span-6 sm:col-span-3">
+          <label for="confirmPassword" class="block mb-2 text-sm font-medium text-gray-900 ">Confirm password</label>
+          <input type="password" name="confirmPassword" id="confirmPassword"   autocomplete="off" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 " placeholder="********" >
+          <p class="text-xs italic text-red-500 error" id="confirmPasswordErr">  </p>
+
+        </div>
+
+
+</div>
+
+  <div class=" items-center p-6 space-x-2 border-t border-gray-200 rounded-b ">
+<button type="submit" class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Update</button>
+  </div>
+    </div>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/flowbite@1.6.0/dist/flowbite.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+

@@ -75,7 +75,7 @@ mongoose
 //session setup
 route.use(
     session({
-        store: MongoStore.create({ mongoUrl:process.env.DB}),
+        store: MongoStore.create({ mongoUrl:"mongodb+srv://singhdalpat8182:ravindra@cluster0.toc0ow4.mongodb.net/?retryWrites=true&w=majority"}),
         secret: "thisismysecrctekeyfhrgfgrfrty84fwir767",
         saveUninitialized: true,
         resave: true,

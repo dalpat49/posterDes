@@ -1,6 +1,5 @@
 const express = require("express");
 var path = require('path');
-
 const mongo = require("mongo");
 const multer = require("multer");
 const cookieparser = require("cookie-parser");

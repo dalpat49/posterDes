@@ -152,9 +152,13 @@ const isAdminLogout = async (req, res, next) => {
 //Homem page
 route.get("/", async (req, res) => {
     try {
+        if (req.session.user_sid) {
+            return res.redirect("/Home");
+        } else {
            const newMessage = req.flash("login");
             const newAlert = req.flash("alert");
             return res.render("index",{ message: newMessage, alert: newAlert });
+        }
         
     } catch (err) {
                 return res.status(400).render("errorPage");
